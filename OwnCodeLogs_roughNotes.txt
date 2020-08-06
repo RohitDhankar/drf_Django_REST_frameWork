@@ -1,0 +1,136 @@
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ django-admin startproject drf_proj .
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ ls
+drf_proj  manage.py  README.md  requirements.txt
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ cd drf_proj
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork/drf_proj$ ls
+asgi.py  __init__.py  settings.py  urls.py  wsgi.py
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork/drf_proj$ cd ..
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ code .
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx
+[sudo] password for dhankar: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+libpq-dev is already the newest version (10.12-0ubuntu0.18.04.1).
+postgresql is already the newest version (10+190ubuntu0.1).
+postgresql-contrib is already the newest version (10+190ubuntu0.1).
+python3-dev is already the newest version (3.6.7-1~18.04).
+python3-pip is already the newest version (9.0.1-2.3~ubuntu1.18.04.1).
+The following additional packages will be installed:
+  libnginx-mod-http-geoip libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream nginx-common
+  nginx-core
+Suggested packages:
+  fcgiwrap nginx-doc
+The following NEW packages will be installed:
+  libnginx-mod-http-geoip libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream nginx
+  nginx-common nginx-core
+0 upgraded, 8 newly installed, 0 to remove and 58 not upgraded.
+Need to get 598 kB of archives.
+After this operation, 2,120 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 nginx-common all 1.14.0-0ubuntu1.7 [37.4 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-http-geoip amd64 1.14.0-0ubuntu1.7 [11.2 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-http-image-filter amd64 1.14.0-0ubuntu1.7 [14.6 kB]
+Get:4 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-http-xslt-filter amd64 1.14.0-0ubuntu1.7 [13.0 kB]
+Get:5 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-mail amd64 1.14.0-0ubuntu1.7 [41.8 kB]
+Get:6 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-stream amd64 1.14.0-0ubuntu1.7 [63.7 kB]
+Get:7 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 nginx-core amd64 1.14.0-0ubuntu1.7 [413 kB]
+Get:8 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 nginx all 1.14.0-0ubuntu1.7 [3,596 B]
+Fetched 598 kB in 3s (172 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package nginx-common.
+(Reading database ... 310314 files and directories currently installed.)
+Preparing to unpack .../0-nginx-common_1.14.0-0ubuntu1.7_all.deb ...
+Unpacking nginx-common (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package libnginx-mod-http-geoip.
+Preparing to unpack .../1-libnginx-mod-http-geoip_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking libnginx-mod-http-geoip (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package libnginx-mod-http-image-filter.
+Preparing to unpack .../2-libnginx-mod-http-image-filter_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking libnginx-mod-http-image-filter (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package libnginx-mod-http-xslt-filter.
+Preparing to unpack .../3-libnginx-mod-http-xslt-filter_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking libnginx-mod-http-xslt-filter (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package libnginx-mod-mail.
+Preparing to unpack .../4-libnginx-mod-mail_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking libnginx-mod-mail (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package libnginx-mod-stream.
+Preparing to unpack .../5-libnginx-mod-stream_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking libnginx-mod-stream (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package nginx-core.
+Preparing to unpack .../6-nginx-core_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking nginx-core (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../7-nginx_1.14.0-0ubuntu1.7_all.deb ...
+Unpacking nginx (1.14.0-0ubuntu1.7) ...
+Setting up nginx-common (1.14.0-0ubuntu1.7) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib/systemd/system/nginx.service.
+Setting up libnginx-mod-http-image-filter (1.14.0-0ubuntu1.7) ...
+Setting up libnginx-mod-mail (1.14.0-0ubuntu1.7) ...
+Setting up libnginx-mod-http-xslt-filter (1.14.0-0ubuntu1.7) ...
+Setting up libnginx-mod-http-geoip (1.14.0-0ubuntu1.7) ...
+Setting up libnginx-mod-stream (1.14.0-0ubuntu1.7) ...
+Setting up nginx-core (1.14.0-0ubuntu1.7) ...
+Setting up nginx (1.14.0-0ubuntu1.7) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for ufw (0.36-0ubuntu0.18.04.1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+ureadahead will be reprofiled on next reboot
+Processing triggers for systemd (237-3ubuntu10.41) ...
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ 
+#
+
+FOOBAR
+
+#
+
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ sudo -u postgres psql
+psql (10.12 (Ubuntu 10.12-0ubuntu0.18.04.1))
+Type "help" for help.
+
+postgres=# CREATE DATABASE drf_proj_psql_db;
+CREATE DATABASE
+postgres=# CREATE USER drf_proj_user WITH PASSWORD 'drf_pass';
+CREATE ROLE
+postgres=# ALTER ROLE drf_proj_user SET client_encoding TO 'utf8';
+ALTER ROLE
+postgres=# ALTER ROLE drf_proj_user SET default_transaction_isolation TO 'read committed';
+ALTER ROLE
+postgres=# ALTER ROLE drf_proj_user SET timezone TO 'UTC';
+ALTER ROLE
+postgres=# GRANT ALL PRIVILEGES ON DATABASE drf_proj_psql_db TO drf_proj_user;
+GRANT
+postgres=# \q
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ 
+
+#
+
+
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ pip install gunicorn psycopg2
+Collecting gunicorn
+  Using cached gunicorn-20.0.4-py2.py3-none-any.whl (77 kB)
+Processing /home/dhankar/.cache/pip/wheels/35/64/21/9c9e2c1bb9cd6bca3c1b97b955615e37fd309f8e8b0b9fdf1a/psycopg2-2.8.5-cp38-cp38-linux_x86_64.whl
+Requirement already satisfied: setuptools>=3.0 in /home/dhankar/anaconda3/envs/drf_venv/lib/python3.8/site-packages (from gunicorn) (49.2.0.post20200714)
+Installing collected packages: gunicorn, psycopg2
+Successfully installed gunicorn-20.0.4 psycopg2-2.8.5
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ pip freeze > requirements.txt
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ 
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	OwnCodeLogs_roughNotes.txt
+	drf_proj/
+	manage.py
+	requirements.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ 
+
+#
+
+
+
