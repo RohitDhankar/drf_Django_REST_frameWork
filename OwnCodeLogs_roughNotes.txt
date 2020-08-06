@@ -131,6 +131,89 @@ nothing added to commit but untracked files present (use "git add" to track)
 (drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ 
 
 #
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ python manage.py makemigrations
+    =From Settings.py==Nginx Config======STATIC_ROOT=====     /home/dhankar/_dc_all/drf/drf_Django_REST_frameWork/static/
+    =From Settings.py==Nginx Config======BASE_DIR========     /home/dhankar/_dc_all/drf/drf_Django_REST_frameWork
+                    
+No changes detected
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ python manage.py migrate
+    =From Settings.py==Nginx Config======STATIC_ROOT=====     /home/dhankar/_dc_all/drf/drf_Django_REST_frameWork/static/
+    =From Settings.py==Nginx Config======BASE_DIR========     /home/dhankar/_dc_all/drf/drf_Django_REST_frameWork
+                    
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ 
+
+#
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ python manage.py collectstatic
+
+165 static files copied to '/home/dhankar/_dc_all/drf/drf_Django_REST_frameWork/static'.
+
+#
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ python manage.py runserver 0.0.0.0:8000
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 06, 2020 - 16:53:01
+Django version 3.1, using settings 'drf_proj.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+[06/Aug/2020 16:53:18] "GET / HTTP/1.1" 200 16351
+[06/Aug/2020 16:53:18] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+Not Found: /favicon.ico
+[06/Aug/2020 16:53:18] "GET /favicon.ico HTTP/1.1" 404 1974
+[06/Aug/2020 16:53:18] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[06/Aug/2020 16:53:18] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[06/Aug/2020 16:53:18] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+
+#
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ gunicorn --bind 0.0.0.0:8000 drf_proj.wsgi
+[2020-08-06 22:26:13 +0530] [789] [INFO] Starting gunicorn 20.0.4
+[2020-08-06 22:26:13 +0530] [789] [INFO] Listening at: http://0.0.0.0:8000 (789)
+[2020-08-06 22:26:13 +0530] [789] [INFO] Using worker: sync
+[2020-08-06 22:26:13 +0530] [791] [INFO] Booting worker with pid: 791
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /favicon.ico
 
 
+#
+
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ python manage.py runserver 0.0.0.0:8000
+Watching for file changes with StatReloader
+Performing system checks...
+
+File - urls.py - Testing - queryset
+<QuerySet [<User: rd8>]>
+                                                                                                                                                                                                                                                                              
+System check identified no issues (0 silenced).
+August 06, 2020 - 17:05:15
+Django version 3.1, using settings 'drf_proj.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+#
 

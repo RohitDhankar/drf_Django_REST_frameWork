@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os 
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -75,13 +77,23 @@ WSGI_APPLICATION = 'drf_proj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'drf_proj_psql_db',
+        'USER': 'drf_proj_user', # NO CAPITAL LETTERS in USER NAME for Postgres
+        'PASSWORD': 'drf_pass',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -119,4 +131,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+#
+MEDIA_URL = '/media/'
+#MEDIA_ROOT = '/var/www/nginx_django_static/media_served_by_nginx/'
+MEDIA_ROOT = BASE_DIR
+#
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/') # Nginx Config
+#STATIC_ROOT = '/var/www/nginx_django_static'
+# print("    =From Settings.py==Nginx Config======STATIC_ROOT=====    ",STATIC_ROOT)
+# print("    =From Settings.py==Nginx Config======BASE_DIR========    ",BASE_DIR)
+# print("  "*10)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static_drf_proj"),]
+## STATICFILES_DIRS --- is where the Collectstatic will gather Files from and Push them to STATIC_ROOT 
+## Nginx will serve the Files from - STATIC_ROOT 
+#
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
