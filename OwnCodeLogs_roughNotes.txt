@@ -217,3 +217,33 @@ Quit the server with CONTROL-C.
 
 #
 
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 06, 2020 - 17:47:20
+Django version 3.1, using settings 'drf_proj.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Not Found: /
+[06/Aug/2020 17:50:00] "GET /api-auth/login/ HTTP/1.1" 200 2700
+
+#
+
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ django-admin startapp drf_app
+(drf_venv) dhankar@dhankar-1:~/_dc_all/drf/drf_Django_REST_frameWork$ ls -ltr
+total 40
+-rw-r--r-- 1 dhankar dhankar    54 Aug  6 15:16 README.md
+-rwxr-xr-x 1 dhankar dhankar   664 Aug  6 21:36 manage.py
+-rw-r--r-- 1 dhankar dhankar   174 Aug  6 21:52 requirements.txt
+drwxr-xr-x 3 dhankar dhankar  4096 Aug  6 22:05 drf_proj
+drwxr-xr-x 2 dhankar dhankar  4096 Aug  6 22:10 static_drf_proj
+drwxr-xr-x 4 dhankar dhankar  4096 Aug  6 22:10 static
+-rw-r--r-- 1 dhankar dhankar 12074 Aug  6 23:21 OwnCodeLogs_roughNotes.txt
+drwxr-xr-x 3 dhankar dhankar  4096 Aug  6 23:25 drf_app
+
+
+#
+
+
