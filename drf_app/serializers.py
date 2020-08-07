@@ -7,6 +7,7 @@ other relationships, but hyperlinking is good RESTful design."""
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
+    #print("---UserSerializer----Called-")
     class Meta:
         model = User
         fields = ['url', 'username', 'email', 'groups']
@@ -14,6 +15,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
+    #print("---GroupSerializer----Called-")
     class Meta:
         model = Group
         fields = ['url', 'name']

@@ -53,5 +53,8 @@ router.register(r'users', UserViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     # DRF URLS
-    url(r'^api-auth/', include('rest_framework.urls'))
+    url(r'^api-auth/', include('rest_framework.urls')),
+    # DRF App URL's
+    url(r'^drf_app/', include('drf_app.urls'))
+
 ]
