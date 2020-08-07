@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
-from tutorial.quickstart.serializers import UserSerializer, GroupSerializer
+from drf_app.serializers import UserSerializer, GroupSerializer
 
 """
 Rather than write multiple views we're grouping together all the common behavior 
@@ -13,12 +13,13 @@ but using viewsets keeps the view logic nicely organized as well as being very c
 """
 
 
+
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
     queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
+    #serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 
@@ -29,3 +30,8 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+def drfAppTest(request):
+    print("=File = Views.py==UserSerializer==")
+    return render(request, 'drf_app/test.html') #
